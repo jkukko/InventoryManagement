@@ -8,11 +8,11 @@ Sisäänmenevät tilaukset kasvattavat varastossa olevien tuotteiden saldoa ja u
 Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilanne ja  varastohistoria.
 
 ## Toimintoja
-*Käyttäjän luominen
-*Kirjautuminen
-*Varaston luominen
-*Tuotteen luominen
-*Tilauksen kirjaaminen
-*Varastosta tuotteen ottaminen (ulos menevän tilauksen kirjaaminen)
-*Varaston nykytilanteen raportointi
-*Varaston historian tarkasteleminen
+* Käyttäjän luominen
+* Kirjautuminen
+* Varaston luominen
+* Tuotteen luominen
+* Tilauksen kirjaaminen
+* Varastosta tuotteen ottaminen (ulos menevän tilauksen kirjaaminen)
+* Varaston nykytilanteen raportointi
+* Varaston historian tarkasteleminen
