@@ -16,3 +16,7 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 * Varastosta tuotteen ottaminen (ulos menevän tilauksen kirjaaminen)
 * Varaston nykytilanteen raportointi
 * Varaston historian tarkasteleminen
+
+## Dokumentit
+
+[Tietokantakuvio]()
