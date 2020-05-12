@@ -15,7 +15,9 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 * Varastojen listaus
 * Lähettää pyyntö oikeuteen käyttää varastoa
 * Tuotteen luominen
+* Tuotteen muuttaminen ja poistaminen
 * Tilauksen kirjaaminen
+* Tilauksen muuttaminen ja poistaminen
 * Varastosta tuotteen ottaminen (ulos menevän tilauksen kirjaaminen)
 * Varaston nykytilanteen raportointi
 * Varaston historian tarkasteleminen
