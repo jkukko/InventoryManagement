@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Inventory</th>
+    </tr>
+    {% for inventory in inventories %}
+    <tr>
+      <td>{{ inventory.name }}</td>
+      <td>
+          <form method="POST" action="{{ url_for('inventory_remove', inventory_id=inventory.id) }}">
+            <input type="submit" value="Remove Inventory"/>
+          </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
