@@ -27,3 +27,7 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 [Tietokantakuvio](https://github.com/jkukko/InventoryManagement/blob/master/documents/pictures/tietokantakaavio.png)
 
 [User stories](https://github.com/jkukko/InventoryManagement/blob/master/documents/userstories.md)
+
+## Linkit
+
+[Heroku sovellus](https://manage-your-inventory.herokuapp.com/)
