@@ -12,11 +12,11 @@
     </p>
     {% else %}
     <a href="{{ url_for('auth_login') }}">Kirjaudu</a> 
+    <a href="{{ url_for('user_form') }}">Create an user</a>
     {% endif %}
     <ul>
       <li><a href="{{ url_for('inventory_index') }}">List invetories</a></li>
       <li><a href="{{ url_for('inventory_form') }}">Add new inventory</a></li>
-      <li><a href="{{ url_for('user_form') }}">Create an user</a></li>
     </ul>
     {% block body %}
       <p>

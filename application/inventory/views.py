@@ -1,5 +1,5 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 from application import app, db
 from application.inventory.models import Inventory
@@ -23,7 +23,8 @@ def inventory_create():
         return render_template("inventory/new.html", form = form)
 
     i = Inventory(form.name.data)
-
+    i.owner_id = current_user.id
+    
     db.session().add(i)
     db.session.commit()
 
@@ -34,6 +35,7 @@ def inventory_create():
 def inventory_remove(inventory_id):
 
     i = Inventory.query.get(inventory_id)
+    
 
     db.session.delete(i)
     db.session.commit()
