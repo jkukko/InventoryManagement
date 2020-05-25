@@ -31,3 +31,12 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 ## Linkit
 
 [Heroku sovellus](https://manage-your-inventory.herokuapp.com/)
+
+
+## Käyttöohjeet
+
+### Kirjautuminen
+
+`
+Käyttäjätunnus: test1, salasana: test1
+`
