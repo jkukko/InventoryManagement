@@ -7,7 +7,7 @@ class Inventory(db.Model):
     name = db.Column(db.String(144), nullable=False)
 
     owner_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
-
+    orders = db.relationship("Order", backref='inventory', lazy=True)
 
 
     def __init__(self, name):
