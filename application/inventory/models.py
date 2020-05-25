@@ -8,7 +8,7 @@ class Inventory(db.Model):
 
     owner_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     orders = db.relationship("Order", backref='inventory', lazy=True)
-
+    products = db.relationship("Product", backref='inventory', lazy=True)
 
     def __init__(self, name):
         self.name = name

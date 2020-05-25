@@ -25,6 +25,7 @@ def product_create():
         return render_template("product/new.html", form = form)
 
     p = Product(form.name.data, form.segment.data)
+    p.inventory_id = 1
 
     db.session().add(p)
     db.session.commit()

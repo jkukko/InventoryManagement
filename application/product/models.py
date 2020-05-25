@@ -10,6 +10,8 @@ class Product(db.Model):
     current_stock = db.Column(db.Integer)
     safety_stock = db.Column(db.Integer)
 
+    inventory_id = db.Column(db.Integer, db.ForeignKey('inventory.id'), nullable=False)
+
     def __init__(self, name, segment):
         self.name = name
         self.segment = segment
