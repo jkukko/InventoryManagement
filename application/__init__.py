@@ -15,6 +15,9 @@ from application.inventory import views
 from application.auth import models 
 from application.auth import views
 
+from application.product import models
+from application.product import views
+
 # kirjautuminen
 from application.auth.models import User
 from os import urandom
