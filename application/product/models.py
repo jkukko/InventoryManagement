@@ -8,9 +8,11 @@ class Product(db.Model):
     name = db.Column(db.String(144), nullable=False)
     segment = db.Column(db.String(144), nullable=False)
     current_stock = db.Column(db.Integer)
+    safetyStock = db.Column(db.Integer)
 
     def __init__(self, name, segment):
         self.name = name
         self.segment = segment
         self.current_stock = 0
+        self.safetyStock = 0
 
