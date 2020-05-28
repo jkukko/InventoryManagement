@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form method="POST" action="{{ url_for('order_create') }}">
+    <table>
+        <tr>
+            <td>
+                {{ form.product.label }}
+            </td>
+            <td>
+                {{ form.product }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form.inventory.label }}
+            </td>
+            <td>
+                {{ form.inventory }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form.amount.label }}
+            </td>
+            <td>
+                {{ form.amount }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form.incoming.label }}
+            </td>
+            <td>
+                {{ form.incoming }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create new Order">
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

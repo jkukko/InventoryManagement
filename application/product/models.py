@@ -8,6 +8,7 @@ class Product(Base):
     safety_stock = db.Column(db.Integer)
 
     inventory_id = db.Column(db.Integer, db.ForeignKey('inventory.id'), nullable=False)
+    orders = db.relationship('Order', backref='product', lazy=True)
 
     def __init__(self, name, segment):
         self.name = name

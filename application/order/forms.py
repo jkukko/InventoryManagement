@@ -5,3 +5,5 @@ class OrderForm(FlaskForm):
     
     incoming = BooleanField("Incoming/Outcoming")
     amount = IntegerField("Amount")
+    product = SelectField("Product", coerce=int)
+    inventory = SelectField("Inventory", coerce=int)
