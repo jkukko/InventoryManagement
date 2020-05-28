@@ -8,6 +8,9 @@
     {% for order in orders %}
     <tr>
       <td>{{ order.amount }}</td>
+      <td>{{ order.product }}</td>
+      <td>{{ order.inventory }}</td>
+      <td>{{ order.incoming }}</td>
     </tr>
     {% endfor %}
   </table>
