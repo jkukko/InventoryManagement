@@ -41,3 +41,12 @@ def inventory_remove(inventory_id):
     db.session.commit()
 
     return redirect(url_for("inventory_index"))
+
+@app.route("/inventory/<inventory_id>/", methods=["GET"])
+@login_required
+def inventory(inventory_id):
+
+    i = Inventory.query.get(inventory_id)
+    lista = i.amount_of_products_where_current_stock_zero()
+    print(lista[0])
+    return render_template("inventory/view.html", name=i.name)
