@@ -15,4 +15,6 @@ class Product(Base):
         self.segment = segment
         self.current_stock = 0
         self.safety_stock = 0
-
+        
+    def get_current_stock(self, id):
+        return self.current_stock

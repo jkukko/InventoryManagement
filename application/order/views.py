@@ -26,18 +26,28 @@ def order_form():
 
 @app.route("/order/", methods=["POST"])
 def order_create():
-    p = Product.query.all()
-    product_names = [(i.id, i.name) for i in p]
-    inv = Inventory.query.all()
-    inventory_names = [(i.id, i.name) for i in inv]
 
     form = OrderForm()
-    form.product.choices = product_names
-    form.inventory.choices = inventory_names
 
-    o = Order(form.incoming.data, form.amount.data)
-    o.inventory_id = 1
-    o.product_id = 1
+    product = Product.query.filter(Product.id.like(form.product.data)).first()
+    current_stock = product.current_stock
+    value = form.amount.data
+    if form.incoming.data == True:
+        product.current_stock = current_stock + form.amount.data
+    else:
+        if current_stock > form.amount.data:
+            product.current_stock = current_stock - form.amount.data
+        elif current_stock == 0:
+            render_template("/order/new.html", form = form)
+        else:
+            value = value - current_stock
+            product.current_stock = 0
+
+        
+
+    o = Order(form.incoming.data, value)
+    o.inventory_id = form.inventory.data
+    o.product_id = form.product.data
 
     db.session().add(o)
     db.session.commit()
