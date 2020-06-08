@@ -8,10 +8,12 @@ from application.inventory.models import Inventory
 from application.order.forms import OrderForm
 
 @app.route("/orders", methods=["GET"])
+@login_required
 def order_index():
     return render_template("order/list.html", orders = Order.query.all())
 
 @app.route("/order/new/")
+@login_required
 def order_form():
     p = Product.query.all()
     names = [(i.id, i.name) for i in p]
