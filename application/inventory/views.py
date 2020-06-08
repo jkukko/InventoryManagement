@@ -6,8 +6,9 @@ from application.inventory.models import Inventory
 from application.inventory.forms import InventoryForm
 
 @app.route("/inventories", methods=["GET"])
+@login_required
 def inventory_index():
-    return render_template("inventory/list.html", inventories = Inventory.query.all())
+    return render_template("inventory/list.html", inventories = Inventory.query.filter_by(owner_id = current_user.id).all())
 
 @app.route("/inventory/new/")
 @login_required

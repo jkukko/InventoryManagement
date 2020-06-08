@@ -1,5 +1,5 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 from application import app, db
 from application.order.models import Order
@@ -15,10 +15,11 @@ def order_index():
 def order_form():
     p = Product.query.all()
     names = [(i.id, i.name) for i in p]
-    inv = Inventory.query.all()
+    inv = Inventory.query.filter_by(owner_id = current_user.id).all()
     inventory_names = [(i.id, i.name) for i in inv]
 
     form = OrderForm()
+
     form.product.choices = names
     form.inventory.choices = inventory_names
 
@@ -32,6 +33,7 @@ def order_create():
     product = Product.query.filter(Product.id.like(form.product.data)).first()
     current_stock = product.current_stock
     value = form.amount.data
+
     if form.incoming.data == True:
         product.current_stock = current_stock + form.amount.data
     else:
