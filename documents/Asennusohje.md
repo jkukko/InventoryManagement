@@ -4,7 +4,6 @@
 * Lataa projekti, joko Cloonaamalla Repositori tai lataamalla se
 * Pura zip-kansio 
 * Terminaalin avulla luo projektinjuurikansioon venv-virtuaaliympäristö. Komento:
-
 `
 python3 -m venv venv
 `
