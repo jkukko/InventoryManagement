@@ -32,6 +32,8 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 
 [Asennusohje](https://github.com/jkukko/InventoryManagement/blob/master/documents/Asennusohje.md)
 
+[Käyttöohje](https://github.com/jkukko/InventoryManagement/blob/master/documents/K%C3%A4ytt%C3%B6ohje.md)
+
 ## Linkit
 
 [Heroku sovellus](https://manage-your-inventory.herokuapp.com/)
