@@ -29,6 +29,9 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 [User stories](https://github.com/jkukko/InventoryManagement/blob/master/documents/userstories.md)
 
 [Ideoita matkanvarrelta](https://github.com/jkukko/InventoryManagement/blob/master/documents/ideoita.md)
+
+[Asennusohje](https://github.com/jkukko/InventoryManagement/blob/master/documents/Asennusohje.md)
+
 ## Linkit
 
 [Heroku sovellus](https://manage-your-inventory.herokuapp.com/)
