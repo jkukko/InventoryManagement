@@ -16,7 +16,7 @@ def auth_login():
     user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
     if not user:
         return render_template("auth/loginform.html", form = form,
-                                error = "No such username or password")
+                                error = "No such username or invalid password")
 
 
     login_user(user)
@@ -72,4 +72,4 @@ def auth_register():
     db.session.add(user)
     db.session.commit()
 
-    return redirect(url_for("index"))
+    return redirect(url_for("auth_login"))
