@@ -1,28 +1,21 @@
 {% extends "layout.html" %}
-  
+
 {% block body %}
-<form method="POST" action="{{ url_for('inventory_create') }}">
-  <table>
-    <tr>
-      <td>
-        {{ form.name.label }}
-      </td>
-      <td>
-        {{ form.name }}
-      </td>
-      <td>
-        <ul>
-          {% for error in form.name.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <input type="submit" value="Create new inventory"/>
-      </td>
-    </tr>
-  </table>
+
+{{ error }}
+
+<form class="form-horizontal" method="POST" action="{{ url_for('inventory_create') }}">
+  <div class="form-group">
+    <label for="name">{{ form.name.label }}</label>
+    {{ form.name(class="form-control", autocomplete="off") }}
+    <ul>
+      {% for error in form.name.errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <button type="submit" class="btn btn-outline-dark">Create new inventory</button>
 </form>
+
 {% endblock %}
