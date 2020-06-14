@@ -16,6 +16,9 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('inventory', inventory_id=inventory.id) }}">Summary</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{ url_for('product_index', inventory_id=inventory.id) }}">List Products</a>
           </li>
           <li class="nav-item">

@@ -1,14 +1,19 @@
 {% extends "layout_inventory.html" %}
 
 {% block body %}
-  <table>
+  <table class="table table-bordered">
     <tr>
-      <th>Product</th>
+      <th>Name</th>
+      <th>Segment</th>
+      <th>Current Stock</th>
+      <th>Safety Stock</th>
     </tr>
-    {% for product in products %}
     <tr>
+    {% for product in products %}
       <td>{{ product.name }}</td>
+      <td>{{ product.segment }}</td>
       <td>{{ product.current_stock }}</td>
+      <td>{{ product.safety_stock }}</td>
     </tr>
     {% endfor %}
   </table>
