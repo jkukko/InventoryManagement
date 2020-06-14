@@ -1,7 +1,7 @@
-{% extends "layout.html" %}
+{% extends "layout_inventory.html" %}
 
 {% block body %}
-<form method="POST" action="{{ url_for('order_create') }}">
+<form method="POST" action="{{ url_for('order_create', inventory_id=inventory.id) }}">
     <table>
         <tr>
             <td>
@@ -9,14 +9,6 @@
             </td>
             <td>
                 {{ form.product }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form.inventory.label }}
-            </td>
-            <td>
-                {{ form.inventory }}
             </td>
         </tr>
         <tr>
