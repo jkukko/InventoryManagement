@@ -7,6 +7,8 @@
       <th>Segment</th>
       <th>Current Stock</th>
       <th>Safety Stock</th>
+      <th>Difference</th>
+      <th>Update Product</th>
     </tr>
     <tr>
     {% for product in products %}
@@ -14,6 +16,12 @@
       <td>{{ product.segment }}</td>
       <td>{{ product.current_stock }}</td>
       <td>{{ product.safety_stock }}</td>
+      <td>{{ product.difference }}</td>
+      <td>
+        <form method="GET" action="{{ url_for('product_update_form', inventory_id=inventory.id, product_id=product.id) }}">
+          <input type="submit" value="Uppdate Product"/>
+        </form>
+      </td>
     </tr>
     {% endfor %}
   </table>

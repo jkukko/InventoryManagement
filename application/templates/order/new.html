@@ -1,38 +1,30 @@
 {% extends "layout_inventory.html" %}
 
 {% block body %}
-<form method="POST" action="{{ url_for('order_create', inventory_id=inventory.id) }}">
-    <table>
-        <tr>
-            <td>
-                {{ form.product.label }}
-            </td>
-            <td>
-                {{ form.product }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form.amount.label }}
-            </td>
-            <td>
-                {{ form.amount }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form.incoming.label }}
-            </td>
-            <td>
-                {{ form.incoming }}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="Create new Order">
-            </td>
-        </tr>
-    </table>
+
+{{ error }}
+<form class="form-horizontal" method="POST" action="{{ url_for('order_create', inventory_id=inventory.id) }}">
+
+    <div class="form-row">
+        <div class="from-group col-md-6">
+            <label for="product">{{ form.product.label }}</label>
+            {{ form.product(class="form-control", autocomplete="off") }}
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="amount">{{ form.amount.label }}</label>
+            {{ form.amount(class="form-control", autocomplete="off") }}
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <label for="product">{{ form.incoming.label }}</label>
+                {{ form.incoming(class="form-control", autocomplete="off") }}
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-dark">Create new Order</button>
+
 </form>
 
 {% endblock %}
