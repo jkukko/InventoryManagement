@@ -16,7 +16,7 @@ def order_index(inventory_id):
 @app.route("/inventory/<inventory_id>/order/new/")
 @login_required
 def order_form(inventory_id):
-    p = Product.query.all()
+    p = Product.query.filter_by(inventory_id=inventory_id).all()
     names = [(i.id, i.name) for i in p]
     i = Inventory.query.get(inventory_id)
 
