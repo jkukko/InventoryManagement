@@ -51,7 +51,7 @@ def order_create(inventory_id):
             product.difference = product.current_stock - product.safety_stock
 
         
-
+    # Order
     o = Order(form.incoming.data, value)
     o.inventory_id = inventory_id
     o.product_id = form.product.data
