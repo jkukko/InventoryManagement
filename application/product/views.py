@@ -46,7 +46,9 @@ def product_create(inventory_id):
 def product_update_form(inventory_id, product_id):
     i = Inventory.query.get(inventory_id)
     p = Product.query.get(product_id)
-    return render_template("/product/update.html", inventory=i, form = ProductForm(obj = p), product=p)
+
+    result_list = p.orders_by_product(product_id)
+    return render_template("/product/update.html", inventory=i, form = ProductForm(obj = p), product=p, order_list = result_list)
 
 @app.route("/product/<product_id>", methods=["POST"])
 @login_required

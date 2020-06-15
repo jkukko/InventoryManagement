@@ -22,4 +22,19 @@ class Product(Base):
     def get_current_stock(self, id):
         return self.current_stock
 
+    @staticmethod
+    def orders_by_product(product_id):
+
+        stmt = text("SELECT Orders.date_created, Orders.amount FROM Orders"
+                    " WHERE Orders.product_id = :prod").params(prod = product_id)
+
+        
+        response = []
+        res = db.engine.execute(stmt)
+
+        for row in res:
+            response.append({"time": row[0], "amount": row[1]})
+
+        return response
+
 
