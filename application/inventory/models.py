@@ -11,15 +11,32 @@ class Inventory(Base):
     def __init__(self, name):
         self.name = name
 
+
     @staticmethod
-    def amount_of_products_where_current_stock_zero():
+    def count_of_products_in_inventory(inventory_id):
+
         stmt = text("SELECT COUNT(Product.id) FROM Product"
-        )
+                    " WHERE Product.inventory_id = :inv_id").params(inv_id = inventory_id)
 
         res = db.engine.execute(stmt)
-        response = []
+
         for row in res:
-            response.append(row)
+            number = row[0]
+        
+        return number
 
-        return response
+    @staticmethod
+    def count_of_products_in_inventory_negative_difference(inventory_id):
 
+        stmt = text("SELECT COUNT(Product.id) FROM Product"
+                    " WHERE Product.difference < 0"
+                    " AND Product.inventory_id = :inv_id").params(inv_id = inventory_id)
+
+        res = db.engine.execute(stmt)
+
+        for row in res:
+            number = row[0]
+        
+        return number
+
+        

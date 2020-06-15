@@ -48,6 +48,6 @@ def inventory_remove(inventory_id):
 def inventory(inventory_id):
 
     i = Inventory.query.get(inventory_id)
-    lista = i.amount_of_products_where_current_stock_zero()
-    print(lista[0])
-    return render_template("inventory/view.html", inventory = i)
+    count_of_products = i.count_of_products_in_inventory(inventory_id)
+    count_of_products_negative_difference = i.count_of_products_in_inventory_negative_difference(inventory_id)
+    return render_template("inventory/view.html", inventory = i, products = count_of_products, products_negative_difference = count_of_products_negative_difference)

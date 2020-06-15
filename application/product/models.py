@@ -1,5 +1,6 @@
 from application import db
 from application.models import Base
+from sqlalchemy.sql import text
 
 class Product(Base):
     name = db.Column(db.String(144), nullable=False)
@@ -20,3 +21,5 @@ class Product(Base):
         
     def get_current_stock(self, id):
         return self.current_stock
+
+

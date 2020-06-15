@@ -1,4 +1,7 @@
 {% extends "layout_inventory.html" %}
 {% block body %}
 <h3>Inventory: {{ inventory.name }}</h3>
+
+<p>Products: {{ products }}</p>
+<p>Products current Stock under safety stock: {{ products_negative_difference }}</p>
 {% endblock %}
