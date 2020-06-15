@@ -4,6 +4,7 @@ from flask_login import login_required, current_user
 from application import app, db
 from application.inventory.models import Inventory
 from application.inventory.forms import InventoryForm
+from application.product.models import Product
 
 @app.route("/inventories", methods=["GET"])
 @login_required
@@ -52,8 +53,18 @@ def inventory(inventory_id):
     count_of_products = i.count_of_products_in_inventory(inventory_id)
     count_of_products_negative_difference = i.count_of_products_in_inventory_negative_difference(inventory_id)
     result_list = i.products_under_safety_stock(inventory_id)
+
+    list_of_products = i.product_id_where_difference_negative(inventory_id)
+    list_of_charts = []
+
+    for product_id in list_of_products:
+        p = Product.query.get(product_id)
+        list_of_charts.append(p.create_figure(product_id))
+    
+
     return render_template("inventory/view.html", 
                             inventory = i, 
                             products = count_of_products, 
                             products_negative_difference = count_of_products_negative_difference, 
-                            product_list = result_list)
+                            product_list = result_list,
+                            images = list_of_charts)

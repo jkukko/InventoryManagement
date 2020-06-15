@@ -21,4 +21,8 @@
         </tr>
         {% endfor %}
     </table>
+
+    {% for image in images %}
+    <img src="{{ image }}"/>
+    {% endfor %}
 {% endblock %}

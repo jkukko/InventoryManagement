@@ -6,6 +6,15 @@ from application.product.models import Product
 from application.product.forms import ProductForm
 from application.inventory.models import Inventory
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+
+
+import io
+import base64
 
 @app.route("/inventory/<inventory_id>/products", methods=["GET"])
 @login_required
@@ -47,8 +56,7 @@ def product_update_form(inventory_id, product_id):
     i = Inventory.query.get(inventory_id)
     p = Product.query.get(product_id)
 
-    result_list = p.orders_by_product(product_id)
-    return render_template("/product/update.html", inventory=i, form = ProductForm(obj = p), product=p, order_list = result_list)
+    return render_template("/product/update.html", inventory=i, form = ProductForm(obj = p), product=p, chart = p.create_figure(product_id))
 
 @app.route("/product/<product_id>", methods=["POST"])
 @login_required
