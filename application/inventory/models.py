@@ -39,4 +39,21 @@ class Inventory(Base):
         
         return number
 
+    @staticmethod
+    def products_under_safety_stock(inventory_id):
+
+        stmt = text("SELECT Product.name, Product.current_stock, Product.difference FROM Product"
+                    " LEFT JOIN Inventory ON Inventory.id = Product.inventory_id"
+                    " WHERE Product.difference < 0"
+                    " AND Inventory.id = :inv").params(inv = inventory_id)
+
+        response = []
+        res = db.engine.execute(stmt)
+
+        for row in res:
+            response.append({"name": row[0], "current": row[1], "difference": row[2]})
+        
+        return response
+
+
         

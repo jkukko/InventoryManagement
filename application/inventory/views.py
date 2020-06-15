@@ -48,6 +48,12 @@ def inventory_remove(inventory_id):
 def inventory(inventory_id):
 
     i = Inventory.query.get(inventory_id)
+    
     count_of_products = i.count_of_products_in_inventory(inventory_id)
     count_of_products_negative_difference = i.count_of_products_in_inventory_negative_difference(inventory_id)
-    return render_template("inventory/view.html", inventory = i, products = count_of_products, products_negative_difference = count_of_products_negative_difference)
+    result_list = i.products_under_safety_stock(inventory_id)
+    return render_template("inventory/view.html", 
+                            inventory = i, 
+                            products = count_of_products, 
+                            products_negative_difference = count_of_products_negative_difference, 
+                            product_list = result_list)
