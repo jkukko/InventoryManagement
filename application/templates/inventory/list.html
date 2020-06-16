@@ -4,20 +4,20 @@
   <table class="table table-bordered">
     <tr>
       <th>Inventory Name</th>
-      <th>Remove Inventory</th>
       <th>Select Inventory</th>
+      <th>Remove Inventory</th>
     </tr>
     {% for inventory in inventories %}
     <tr>
       <td>{{ inventory.name }}</td>
       <td>
-        <form method="POST" action="{{ url_for('inventory_remove', inventory_id=inventory.id) }}">
-          <input type="submit" value="Remove Inventory"/>
+        <form method="GET" action="{{ url_for('inventory', inventory_id=inventory.id) }}">
+          <input type="submit" value="Select"/>
         </form>
       </td>
       <td>
-        <form method="GET" action="{{ url_for('inventory', inventory_id=inventory.id) }}">
-          <input type="submit" value="Select"/>
+        <form method="POST" action="{{ url_for('inventory_remove', inventory_id=inventory.id) }}">
+          <input type="submit" value="Remove Inventory"/>
         </form>
       </td>
     </tr>
