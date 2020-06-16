@@ -19,3 +19,5 @@ Listauksessa käyttäjän varastot.
 Käyttäjä voi valita varaston painamalla "Select Inventory".
 Tämä vie käyttäjän varastonäkymään.
 Käyttäjä voi myös poistaa varaston valitsemalla "remove inventory".
+
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/select_inventory.png" width="960">
