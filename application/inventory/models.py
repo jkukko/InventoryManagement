@@ -107,5 +107,26 @@ class Inventory(Base):
         db.engine.execute(stmt)
 
 
+    @staticmethod
+    def get_orders_by_inventory_id(inventory_id):
+
+        stmt = text("SELECT "
+                    " Orders.date_created, "
+                    " Product.name, "
+                    " Orders.amount, "
+                    " CASE WHEN Orders.incoming == 1 THEN 'Incoming' WHEN Orders.incoming == 0 THEN 'Outgoing' END AS Incoming FROM Orders"
+                    " LEFT JOIN Product ON Product.id = Orders.product_id"
+                    " WHERE Orders.inventory_id = :inv").params(inv = inventory_id)
+
+        res = db.engine.execute(stmt)
+
+        response = []
+
+        for row in res:
+            response.append({"date": row[0], "product": row[1], "amount": row[2], "incoming": row[3]})
+
+        return response
+
+
 
         

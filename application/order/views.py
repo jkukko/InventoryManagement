@@ -11,7 +11,8 @@ from application.order.forms import OrderForm
 @login_required
 def order_index(inventory_id):
     i = Inventory.query.get(inventory_id)
-    return render_template("order/list.html", orders = Order.query.filter_by(inventory_id=inventory_id).all(), inventory = i)
+    list_of_orders = i.get_orders_by_inventory_id(inventory_id)
+    return render_template("order/list.html", orders = Order.query.filter_by(inventory_id=inventory_id).all(), inventory = i, list_of_orders = list_of_orders)
 
 @app.route("/inventory/<inventory_id>/order/new/")
 @login_required
