@@ -2,6 +2,14 @@ from application import db
 from application.models import Base
 from sqlalchemy.sql import text
 
+import io
+import base64
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+
 class Inventory(Base):
     name = db.Column(db.String(144), nullable=False)
     owner_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
@@ -126,6 +134,44 @@ class Inventory(Base):
             response.append({"date": row[0], "product": row[1], "amount": row[2], "incoming": row[3]})
 
         return response
+
+    @staticmethod
+    def get_total_current_stock(inventory_id):
+
+        stmt = text("SELECT SUM(Product.current_stock) FROM Product"
+                    " WHERE Product.inventory_id = :inv").params(inv = inventory_id)
+
+        res = db.engine.execute(stmt)
+
+        for row in res:
+            number = row[0]
+        
+        return number
+
+    @staticmethod
+    def get_pie_chart(inventory_id):
+
+        stmt = text("SELECT Product.name, Product.current_stock FROM Product"
+                    " WHERE Product.inventory_id = :inv").params(inv = inventory_id)
+
+        res = db.engine.execute(stmt)
+
+        response = []
+
+        for row in res:
+            response.append({"product": row[0], "stock": row[1]})
+
+        df = pd.DataFrame(response)
+        print(df)
+        fig, axis = plt.subplots()
+        axis.pie(df["stock"], labels=df["product"], autopct='%1.1f%%', shadow=True, startangle=90)
+        
+        pngImage = io.BytesIO()
+        FigureCanvas(fig).print_png(pngImage)
+
+        pngImageB64String = "data:image/png;base64,"
+        pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
+        return pngImageB64String
 
 
 

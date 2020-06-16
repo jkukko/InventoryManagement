@@ -1,6 +1,9 @@
 {% extends "layout_inventory.html" %}
 
+
+
 {% block body %}
+
   <table class="table table-bordered">
     <tr>
       <th>Name</th>
@@ -25,4 +28,6 @@
     </tr>
     {% endfor %}
   </table>
+  <img src="{{ pie_chart }}">
+
 {% endblock %}

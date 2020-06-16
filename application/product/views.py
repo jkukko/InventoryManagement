@@ -19,8 +19,18 @@ import base64
 @app.route("/inventory/<inventory_id>/products", methods=["GET"])
 @login_required
 def product_index(inventory_id):
-    i = Inventory.query.get(inventory_id)   
-    return render_template("product/list.html", products = Product.query.filter_by(inventory_id = inventory_id).all(), inventory = i)
+    i = Inventory.query.get(inventory_id)
+    products = Product.query.filter_by(inventory_id = inventory_id).all()
+    count_of_products = i.count_of_products_in_inventory(inventory_id)
+    
+    if i.get_total_current_stock(inventory_id) == 0:
+        pie_chart = ""
+    elif len(products) < 1:
+        pie_chart = ""
+    else:
+        pie_chart = i.get_pie_chart(inventory_id)
+
+    return render_template("product/list.html", products = products, inventory = i, pie_chart = pie_chart)
 
 
 @app.route("/inventory/<inventory_id>/product/new/")

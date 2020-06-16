@@ -63,7 +63,6 @@ def inventory(inventory_id):
         p = Product.query.get(product_id)
         list_of_charts.append(p.create_figure(product_id))
     
-
     return render_template("inventory/view.html", 
                             inventory = i, 
                             products = count_of_products, 
