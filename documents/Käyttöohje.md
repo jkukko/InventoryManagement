@@ -5,5 +5,5 @@
 Sovellukseen rekisteröidytään ja kirjaudutaan yläpalkin oikeassa laidassa olevista linkeistä.
 Rekisteröityessä käyttäjänimen ja salasanan tulee olla vähintään 3 merkkiä pitkät ja 15 merkkiä pitkä.
 
-<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/create_an_user_and_login.png" width="480">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/create_an_user_and_login.png" width="720">
 
