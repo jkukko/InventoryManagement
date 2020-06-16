@@ -164,6 +164,7 @@ class Inventory(Base):
         df = pd.DataFrame(response)
         print(df)
         fig, axis = plt.subplots()
+        axis.set_title("Stock")
         axis.pie(df["stock"], labels=df["product"], autopct='%1.1f%%', shadow=True, startangle=90)
         
         pngImage = io.BytesIO()
