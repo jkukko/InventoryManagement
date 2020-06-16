@@ -10,11 +10,21 @@
         <div class="form-group col-md-6">
             <label for="name">{{ form.name.label }}</label>
             {{ form.name(class="form-control", autocomplete="off") }}
+            <ul>
+                {% for error in form.name.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </ul>
         </div>
 
         <div class="form-group col-md-6">
             <label for="segment">{{ form.segment.label }}</label>
             {{ form.segment(class="form-control", autocomplete="off") }}
+            <ul>
+                {% for error in form.segment.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     <button type="submit" class="btn btn-outline-dark">Create new Product</button>

@@ -3,16 +3,20 @@
 {% block body %}
   <table class="table table-bordered">
     <tr>
+      <th>Date</th>
       <th>Product</th>
       <th>Amount</th>
       <th>Incoming</th>
     </tr>
-    {% for order in orders %}
+    {% for order in list_of_orders %}
     <tr>
+      <td>{{ order.date}}</td>
       <td>{{ order.product}}</td>
       <td>{{ order.amount }}</td>
       <td>{{ order.incoming }}</td>
     </tr>
     {% endfor %}
   </table>
+
+
 {% endblock %}
