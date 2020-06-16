@@ -11,4 +11,4 @@ Rekisteröityessä käyttäjänimen ja salasanan tulee olla vähintään 3 merkk
 
 Valitse navigointivalikosta "Add new inventory". Tämän jälkeen keksi varstolle nimi. Sen pitää olla vähintään 5 merkkiä pitkä. Tämän jälkeen tallenna uusi varasto.
 
-
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/create_an_inventory.png" width="960">
