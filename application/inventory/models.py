@@ -88,5 +88,24 @@ class Inventory(Base):
 
         return response
 
+    @staticmethod
+    def remove_inventory(inventory_id):
+
+        stmt = text("DELETE FROM Orders"
+                    " WHERE Orders.inventory_id = :inv").params(inv = inventory_id)
+
+        db.engine.execute(stmt)
+
+        stmt = text("DELETE FROM Product"
+                    " WHERE Product.inventory_id = :inv").params(inv = inventory_id)
+
+        db.engine.execute(stmt)
+
+        stmt = text("DELETE FROM Inventory"
+                    " WHERE Inventory.id = :inv").params(inv = inventory_id)
+
+        db.engine.execute(stmt)
+
+
 
         

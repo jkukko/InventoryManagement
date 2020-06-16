@@ -34,11 +34,17 @@ Varastonäkymä sisältää seuraavat toiminnallisuudet/näkymät:
 
 <img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/inventory_summary_menu.png" width="960">
 
-
 ### Summary
 
+Summary sivulta löytyy varaston perustietoja. Ensimmäisenä on varaston header-tieto.
+Tästä selvii käyttäjälle. Monta tuotetta varastossa on, sekä monessako tuotteessa varastotaso on alle varmuusvaraston.
 
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/inventory_summary_header_information.png" width="960">
 
+Tämän jälkeen löytyy "alarm monitor". 
+Tähän päivittyy kaksi taulukkoa. 
+Ensimmäisessä taulukossa listataan tuotteet, missä varastotaso on 0.
+Toisessa taulukossa
 ### List of Products
 
 ### Add new Product

@@ -37,9 +37,9 @@ def inventory_create():
 def inventory_remove(inventory_id):
 
     i = Inventory.query.get(inventory_id)
-    
 
-    db.session.delete(i)
+    i.remove_inventory(inventory_id)
+    
     db.session.commit()
 
     return redirect(url_for("inventory_index"))

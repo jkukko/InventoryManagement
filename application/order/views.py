@@ -35,12 +35,12 @@ def order_create(inventory_id):
     current_stock = product.current_stock
     value = form.amount.data
     i = Inventory.query.get(inventory_id)
-    
+ 
     if form.incoming.data == True:
         product.current_stock = current_stock + form.amount.data
         product.difference = product.current_stock - product.safety_stock
     else:
-        if current_stock > form.amount.data:
+        if current_stock >= form.amount.data:
             product.current_stock = current_stock - form.amount.data
             product.difference = product.current_stock - product.safety_stock
         elif current_stock == 0:
