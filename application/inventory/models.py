@@ -122,7 +122,7 @@ class Inventory(Base):
                     " Orders.date_created, "
                     " Product.name, "
                     " Orders.amount, "
-                    " CASE WHEN Orders.incoming == 't' THEN 'Incoming' WHEN Orders.incoming == 'f' THEN 'Outgoing' END AS Incoming FROM Orders"
+                    " CASE WHEN Orders.incoming == '1' THEN 'Incoming' WHEN Orders.incoming == '0' THEN 'Outgoing' END AS Incoming FROM Orders"
                     " LEFT JOIN Product ON Product.id = Orders.product_id"
                     " WHERE Orders.inventory_id = :inv").params(inv = inventory_id)
 
