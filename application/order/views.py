@@ -56,4 +56,4 @@ def order_create(inventory_id):
 
     db.session().add(o)
     db.session.commit()
-    return redirect(url_for("order_index", inventory_id=inventory_id))
+    return redirect(url_for("order_index", inventory_id=inventory_id, inventory=i))
