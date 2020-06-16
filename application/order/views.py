@@ -31,7 +31,7 @@ def order_create(inventory_id):
 
     form = OrderForm()
 
-    product = Product.query.filter(Product.id.like(form.product.data)).first()
+    product = Product.query.get(form.product.data)
     current_stock = product.current_stock
     value = form.amount.data
     i = Inventory.query.get(inventory_id)
