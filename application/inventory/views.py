@@ -54,6 +54,8 @@ def inventory(inventory_id):
     count_of_products_negative_difference = i.count_of_products_in_inventory_negative_difference(inventory_id)
     result_list = i.products_under_safety_stock(inventory_id)
 
+    list_of_products_current_stock_zero = i.products_current_stock_zero(inventory_id)
+
     list_of_products = i.product_id_where_difference_negative(inventory_id)
     list_of_charts = []
 
@@ -67,4 +69,5 @@ def inventory(inventory_id):
                             products = count_of_products, 
                             products_negative_difference = count_of_products_negative_difference, 
                             product_list = result_list,
+                            products_current_stock_zero = list_of_products_current_stock_zero,
                             images = list_of_charts)
