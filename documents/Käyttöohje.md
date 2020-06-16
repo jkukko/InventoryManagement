@@ -21,3 +21,25 @@ Tämä vie käyttäjän varastonäkymään.
 Käyttäjä voi myös poistaa varaston valitsemalla "remove inventory".
 
 <img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/select_inventory.png" width="960">
+
+## Varastonäkymä
+
+Varastonäkymä sisältää seuraavat toiminnallisuudet/näkymät:
+* Summary (yleisnäkymä, allert monitor)
+* List Products
+* Add new Product
+* List Orders
+* Add new Order
+* Return to main menu
+
+### Summary
+
+### List of Products
+
+### Add new Product
+
+### List of Orders
+
+### Add new Order
+
+### Return to main menu
