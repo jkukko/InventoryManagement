@@ -5,11 +5,40 @@ from application import app, db
 from application.inventory.models import Inventory
 from application.inventory.forms import InventoryForm
 from application.product.models import Product
+from application.auth.models import User
 
 @app.route("/inventories", methods=["GET"])
 @login_required
 def inventory_index():
-    return render_template("inventory/list.html", inventories = Inventory.query.filter_by(owner_id = current_user.id).all())
+
+    user = User.query.get(current_user.id)
+    list_of_inventories = user.get_inventories_by_user(current_user.id)
+
+    return render_template("inventory/list.html", inventories = list_of_inventories)
+
+@app.route("/inventories/all/", methods=["GET"])
+@login_required
+def all_inventories():
+
+    user = User.query.get(current_user.id)
+    list_of_inventories = user.get_others_than_user_inventories(current_user.id)
+
+    return render_template("inventory/all_inventories.html", inventories = list_of_inventories)
+
+
+@app.route("/inventories/<inventory_id>/request_access", methods=["POST"])
+@login_required
+def add_inventory(inventory_id):
+
+    inventory = Inventory.query.get(inventory_id)
+    user = User.query.get(current_user.id)
+
+    user.inventories.append(inventory)
+
+    db.session.commit()
+
+    return redirect(url_for("all_inventories"))
+
 
 @app.route("/inventory/new/")
 @login_required
@@ -26,6 +55,10 @@ def inventory_create():
 
     i = Inventory(form.name.data)
     i.owner_id = current_user.id
+
+    u = User.query.get(current_user.id)
+
+    u.inventories.append(i)
     
     db.session().add(i)
     db.session.commit()
@@ -37,8 +70,13 @@ def inventory_create():
 def inventory_remove(inventory_id):
 
     i = Inventory.query.get(inventory_id)
+    user = User.query.get(current_user.id)
+    list_of_inventories = user.get_inventories_by_user(current_user.id)
 
-    i.remove_inventory(inventory_id)
+    if i.owner_id != current_user.id:
+        i.remove_user_inventory_rows(inventory_id, current_user.id)
+    else:
+        i.remove_inventory(inventory_id)
     
     db.session.commit()
 
@@ -89,7 +127,6 @@ def inventory(inventory_id):
         p = Product.query.get(product_id)
         list_of_charts.append(p.create_figure(product_id))
 
-    product_summary = i.get_product_total_order_amount_and_count(inventory_id)
 
     return render_template("inventory/view.html", 
                             inventory = i, 
@@ -97,5 +134,4 @@ def inventory(inventory_id):
                             products_negative_difference = count_of_products_negative_difference, 
                             product_list = result_list,
                             products_current_stock_zero = list_of_products_current_stock_zero,
-                            images = list_of_charts,
-                            product_summary = product_summary)
+                            images = list_of_charts)

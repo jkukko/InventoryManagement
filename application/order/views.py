@@ -30,12 +30,12 @@ def order_form(inventory_id):
 @app.route("/inventory/<inventory_id>/order/", methods=["POST"])
 def order_create(inventory_id):
 
+    i = Inventory.query.get(inventory_id)
     form = OrderForm()
 
     product = Product.query.get(form.product.data)
     current_stock = product.current_stock
     value = form.amount.data
-    i = Inventory.query.get(inventory_id)
  
     if form.incoming.data == True:
         product.current_stock = current_stock + form.amount.data

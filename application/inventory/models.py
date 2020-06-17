@@ -11,8 +11,6 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
 
-
-
 class Inventory(Base):
     name = db.Column(db.String(144), nullable=False)
     owner_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
@@ -49,6 +47,7 @@ class Inventory(Base):
             number = row[0]
         
         return number
+
 
     @staticmethod
     def products_under_safety_stock(inventory_id):
@@ -114,6 +113,20 @@ class Inventory(Base):
 
         stmt = text("DELETE FROM Inventory"
                     " WHERE Inventory.id = :inv").params(inv = inventory_id)
+
+        db.engine.execute(stmt)
+
+        stmt = text("DELETE FROM Inventory_users"
+                    " WHERE Inventory_users.inventory_id = :inv").params(inv = inventory_id)
+
+        db.engine.execute(stmt)
+
+    @staticmethod
+    def remove_user_inventory_rows(inventory_id, user_id):
+
+        stmt = text("DELETE FROM Inventory_users"
+                    " WHERE Inventory_users.inventory_id = :inv AND"
+                    " Inventory_users.user_id = :usr").params(inv = inventory_id, usr = user_id)
 
         db.engine.execute(stmt)
 
