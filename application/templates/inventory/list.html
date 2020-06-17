@@ -5,6 +5,7 @@
     <tr>
       <th>Inventory Name</th>
       <th>Select Inventory</th>
+      <th>Update Inventory</th>
       <th>Remove Inventory</th>
     </tr>
     {% for inventory in inventories %}
@@ -16,10 +17,16 @@
         </form>
       </td>
       <td>
-        <form method="POST" action="{{ url_for('inventory_remove', inventory_id=inventory.id) }}">
-          <input type="submit" value="Remove Inventory"/>
+        <form method="GET" action="{{ url_for('inventory_update_form', inventory_id=inventory.id) }}">
+          <input type="submit" value="Update"/>
         </form>
       </td>
+      <td>
+        <form method="POST" action="{{ url_for('inventory_remove', inventory_id=inventory.id) }}">
+          <input type="submit" value="Remove"/>
+        </form>
+      </td>
+      
     </tr>
     {% endfor %}
   </table>

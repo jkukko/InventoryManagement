@@ -10,6 +10,9 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
+
+
+
 class Inventory(Base):
     name = db.Column(db.String(144), nullable=False)
     owner_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
@@ -114,7 +117,6 @@ class Inventory(Base):
 
         db.engine.execute(stmt)
 
-
     @staticmethod
     def get_orders_by_inventory_id(inventory_id):
 
@@ -147,6 +149,7 @@ class Inventory(Base):
             number = row[0]
         
         return number
+
 
     @staticmethod
     def get_pie_chart(inventory_id):

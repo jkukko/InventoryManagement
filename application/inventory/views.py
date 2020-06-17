@@ -44,6 +44,32 @@ def inventory_remove(inventory_id):
 
     return redirect(url_for("inventory_index"))
 
+
+@app.route("/inventory/update/<inventory_id>", methods=["GET"])
+@login_required
+def inventory_update_form(inventory_id):
+    i = Inventory.query.get(inventory_id)
+
+    return render_template("/inventory/update.html", form = InventoryForm(obj = i), inventory=i)
+
+@app.route("/inventory/update/<inventory_id>/", methods=["POST"])
+@login_required
+def inventory_update(inventory_id):
+
+    i = Inventory.query.get(inventory_id)
+
+    form = InventoryForm(request.form)
+
+    if not form.validate():
+        return render_template("/inventory/update.html", form = form, inventory=i)
+
+    i.name = form.name.data
+    
+    db.session.commit()
+
+    return redirect(url_for("inventory_index"))
+
+
 @app.route("/inventory/<inventory_id>/", methods=["GET"])
 @login_required
 def inventory(inventory_id):
@@ -62,11 +88,14 @@ def inventory(inventory_id):
     for product_id in list_of_products:
         p = Product.query.get(product_id)
         list_of_charts.append(p.create_figure(product_id))
-    
+
+    product_summary = i.get_product_total_order_amount_and_count(inventory_id)
+
     return render_template("inventory/view.html", 
                             inventory = i, 
                             products = count_of_products, 
                             products_negative_difference = count_of_products_negative_difference, 
                             product_list = result_list,
                             products_current_stock_zero = list_of_products_current_stock_zero,
-                            images = list_of_charts)
+                            images = list_of_charts,
+                            product_summary = product_summary)
