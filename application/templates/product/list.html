@@ -12,6 +12,7 @@
       <th>Safety Stock</th>
       <th>Difference</th>
       <th>Update Product</th>
+      <th>Remove Product</th>
     </tr>
     <tr>
     {% for product in products %}
@@ -23,6 +24,11 @@
       <td>
         <form method="GET" action="{{ url_for('product_update_form', inventory_id=inventory.id, product_id=product.id) }}">
           <input type="submit" value="Uppdate Product"/>
+        </form>
+      </td>
+      <td>
+        <form method="POST" action="{{ url_for('product_remove', product_id=product.id) }}">
+          <input type="submit" value="Remove Product"/>
         </form>
       </td>
     </tr>

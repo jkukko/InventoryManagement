@@ -49,6 +49,19 @@ class Product(Base):
         return response
 
     @staticmethod
+    def remove_product(product_id):
+
+        stmt = text("DELETE FROM Orders"
+                    " WHERE Orders.product_id = :prod_id").params(prod_id = product_id)
+
+        db.engine.execute(stmt)
+
+        stmt = text("DELETE FROM Product"
+                    " WHERE Product.id = :prod_id").params(prod_id = product_id)
+
+        db.engine.execute(stmt)
+
+    @staticmethod
     def create_figure(product_id):
         p = Product.query.get(product_id)
         result_list = p.orders_by_product(product_id)

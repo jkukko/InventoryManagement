@@ -73,6 +73,8 @@ def product_update_form(inventory_id, product_id):
 def product_update(product_id):
 
     p = Product.query.get(product_id)
+    i = Inventory.query.get(p.inventory_id)
+
 
     form = ProductForm(request.form)
 
@@ -88,3 +90,16 @@ def product_update(product_id):
 
 
     return redirect(url_for("product_index", inventory_id=p.inventory_id))
+
+@app.route("/product/remove/<product_id>", methods=["POST"])
+@login_required
+def product_remove(product_id):
+
+    p = Product.query.get(product_id)
+    inventory_id = p.inventory_id
+
+    p.remove_product(product_id)
+
+    db.session.commit()
+
+    return redirect(url_for("product_index", inventory_id=inventory_id))
