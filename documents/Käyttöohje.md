@@ -78,16 +78,23 @@ Tämän jälkeen systeemi tarjoaa varmuusvarastotason alla olevien tuotteiden va
 Tämän lisäksi systeemi näyttää piirakkakuvion varaston nykyvarastotilanteen jakautumisesta eri tuotteille.
 Listasta käyttäjä voi poistaa ("remove"-painike) tuotteet tai päivittää ("updated"-painike)  sen.
 
-<img src="" width="960">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/list_of_products.png" width="960">
 
 Käyttäjän valitessa päivitä valikko, pääsee hän päivittämään tuotteen tietoja. 
 Päivitettäviä tietoja ovat: nimi, segmentti ja varmuusvarastotaso.
 Tämän lisäksi täältä näkee tuotteen varastohistoria.
 
-<img src="" width="960">
-
-### List of Orders
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/product_update.png" width="960">
 
 ### Add new Order
+
+"Add new Order" -näkymästä käyttäjä voi lisätä uuden tilauksen. 
+Käyttäjä täytyy valita tuote alasvetovalikosta.
+Tämän lisäksi käyttäjän pitää lisätä haluttu määrä.
+Tilaus voi olla joko sisään- tai ulostuleva. 
+Sisääntuleva tilaus kasvattaa tuotteen varastosaldoa ja ulostuleva kuluttaa varastosaldoa.
+
+<img src="" width="">
+### List Orders
 
 ### Return to main menu
