@@ -103,9 +103,36 @@ FROM product
 WHERE product.inventory_id = ?
 ```
 
-* Piirakka kuvion luonti
+* Piirakkakuvion luonti
 
 ```
 SELECT Product.name, Product.current_stock FROM Product WHERE Product.inventory_id = ?
 ```
 
+* Tuotteen päivittäminen
+
+```
+UPDATE product SET date_modified=CURRENT_TIMESTAMP, safety_stock=?, difference=? WHERE product.id = ?
+```
+
+* Tuotteen poistaminen
+
+```
+DELETE FROM Orders WHERE Orders.product_id = ?
+
+DELETE FROM Product WHERE Product.id = ?
+```
+
+* Tilauksen lisääminen
+
+```
+INSERT INTO orders (date_created, date_modified, incoming, amount, inventory_id, product_id) VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?, ?)
+```
+
+* Tilauksien listaaminen
+
+```
+SELECT orders.id AS orders_id, orders.date_created AS orders_date_created, orders.date_modified AS orders_date_modified, orders.incoming AS orders_incoming, orders.amount AS orders_amount, orders.inventory_id AS orders_inventory_id, orders.product_id AS orders_product_id 
+FROM orders 
+WHERE orders.inventory_id = ?
+```
