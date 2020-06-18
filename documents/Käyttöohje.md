@@ -63,11 +63,16 @@ Toiseksi siinä on listattu tuotteet, missä nykyinen varastotilanne on alle var
 
 Tämän jälkeen systeemi tarjoaa varmuusvarastotason alla olevien tuotteiden varastotilanne graafit allekkain.
 
-<img src="" width="">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/inventory_summary_chart.png" width="960">
 
-### List of Products
 
 ### Add new Product
+
+"Add new Product" -näkymässä voidaan lisätä tuote varastoon. Käyttäjän pitää täyttää tuotteen nimi ja segmentti.
+
+<img src="" withd="">
+
+### List of Product
 
 ### List of Orders
 
