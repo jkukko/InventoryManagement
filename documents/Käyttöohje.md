@@ -55,7 +55,7 @@ Ensimmäisenä ilmoitetaan varaston tuotteiden lkm, sekä tuotteiden lukumäär�
 
 <img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/inventory_summary_header_information.png" width="480">
 
-Seuraavaksi on "Allar monitor". 
+Seuraavaksi on "Allerm monitor". 
 Siinä ensimmäiseksi on listattu tuotteet, missä nykyinen vastotilanne on 0.
 Toiseksi siinä on listattu tuotteet, missä nykyinen varastotilanne on alle varmuusvarastotason.
 
@@ -70,9 +70,21 @@ Tämän jälkeen systeemi tarjoaa varmuusvarastotason alla olevien tuotteiden va
 
 "Add new Product" -näkymässä voidaan lisätä tuote varastoon. Käyttäjän pitää täyttää tuotteen nimi ja segmentti.
 
-<img src="" withd="">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/product_create.png" withd="960">
 
 ### List of Product
+
+"List of Product" -näkymästä nähdään kaikki tuotteet, mitä on varastoon perustettu, sekä niiden kyseisen tilanteen.
+Tämän lisäksi systeemi näyttää piirakkakuvion varaston nykyvarastotilanteen jakautumisesta eri tuotteille.
+Listasta käyttäjä voi poistaa ("remove"-painike) tuotteet tai päivittää ("updated"-painike)  sen.
+
+<img src="" width="960">
+
+Käyttäjän valitessa päivitä valikko, pääsee hän päivittämään tuotteen tietoja. 
+Päivitettäviä tietoja ovat: nimi, segmentti ja varmuusvarastotaso.
+Tämän lisäksi täältä näkee tuotteen varastohistoria.
+
+<img src="" width="960">
 
 ### List of Orders
 
