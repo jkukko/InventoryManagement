@@ -1,6 +1,6 @@
 ## Tietokantakaavio
 
-<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/pictures/tietokantakaavio_V4.png" width="960">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/pictures/tietokantakaavio_V4.png" width="480">
 
 ## Create table-lauseet
 
