@@ -1,10 +1,11 @@
 ## Tietokantakaavio
 
-<img="https://github.com/jkukko/InventoryManagement/blob/master/documents/pictures/tietokantakaavio_V4.png" width="960">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/pictures/tietokantakaavio_V4.png" width="960">
 
 ## Create table-lauseet
 
-`
+```
+
 CREATE TABLE account (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -13,6 +14,7 @@ CREATE TABLE account (
 	password VARCHAR(144) NOT NULL, 
 	PRIMARY KEY (id)
 );
+
 CREATE TABLE inventory (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -22,6 +24,7 @@ CREATE TABLE inventory (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(owner_id) REFERENCES account (id)
 );
+
 CREATE TABLE product (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -35,12 +38,14 @@ CREATE TABLE product (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(inventory_id) REFERENCES inventory (id)
 );
+
 CREATE TABLE inventory_users (
 	user_id INTEGER NOT NULL, 
 	inventory_id INTEGER NOT NULL, 
 	FOREIGN KEY(user_id) REFERENCES account (id), 
 	FOREIGN KEY(inventory_id) REFERENCES inventory (id)
 );
+
 CREATE TABLE orders (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -54,4 +59,4 @@ CREATE TABLE orders (
 	FOREIGN KEY(inventory_id) REFERENCES inventory (id), 
 	FOREIGN KEY(product_id) REFERENCES product (id)
 );
-`
+```
