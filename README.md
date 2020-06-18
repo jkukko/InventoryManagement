@@ -13,12 +13,16 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 * Kirjautuminen
 * Varaston luominen
 * Varastojen listaus
+* Oman luodun varaston poistaminen
+* Muiden varastojen listaaminen
 * Muun käyttäjän varaston lisääminen "omiksi" varastoiksi
+* Muun käyttäjän varaston poistaminen
+* Varaston valitseminen
 * Tuotteen luominen
 * Tuotteen muuttaminen ja poistaminen
 * Tilauksen kirjaaminen
 * Varastosta tuotteen ottaminen (ulos menevän tilauksen kirjaaminen)
-* Varmuusvarastotason määrittäminen varastolle
+* Varmuusvarastotason määrittäminen tuotteelle
 * Varaston nykytilanteen raportointi
 * Varaston historian tarkasteleminen
 * Varaston summaryn tarkistaminen
