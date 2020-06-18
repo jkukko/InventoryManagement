@@ -18,7 +18,7 @@ Sinne pääsee myös valitsemalla navikointivalikosta "Own inventories".
 
 Listauksessa käyttäjän tekemät varastot, sekä toisten käyttäjien varastot, mihin hänellä on oikeus.
 Painamalla "select" käyttäjä voi valita varaston, ja tämä vie käyttäjän kyseisen varaston näkymään. 
-Painamalla "Updated" käyttäjä pääsee näkymään, missä hän voi päivittää varaston nimen. 
+Painamalla "Update" käyttäjä pääsee näkymään, missä hän voi päivittää varaston nimen. 
 Painamalla "remove" käyttäjä voi poistaa varaston. 
 Poistamisse huomioidaan kuitenkin onko käyttäjä omistaja vai ei. 
 Jos hän ei ole varaston omistaja, varsto poistuu ainoastaan hänen listauksesta.
@@ -32,7 +32,7 @@ Valitsemalla "Add inventory" valikointinäkymästä käyttäjä saa listauksen k
 Painamalla "Select" käyttäjälle lisätään oikeus varastoon.
 Tämän jälkeen varasto löytyy "Own inventories" alta.
 
-<img src="" width="960">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/all_inventories.png" width="960">
 
 ## Varastonäkymä
 
