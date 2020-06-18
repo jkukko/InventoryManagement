@@ -3,8 +3,7 @@
 InventoryManagement tarjoaa mahdollisuuden varastonhallintaan. 
 Järjestelmällä tarkoitus pitää kirjaa varastontilanteesta. 
 Luodessaan käyttäjää käyttäjä voi luoda varaston / varastoja.
-Käyttäjä voi myös lisätä itselleen muiden tekemiä varastoja.
-Käyttäjä voi valita varaston.  
+Käyttäjä voi myös lisätä itselleen muiden tekemiä varastoja.Käyttäjä voi valita varaston.  
 Käyttäjä voi luoda, muuttaa ja poistaa tuotteita varastossa. Tämän lisäksi käyttäjä voi antaa tuotteelle varmuusvarstolimitin. Käyttäjä voi kirjata varastoon tilauksia, joko sisään- tai ulosmeneviä, tuotteille. 
 Sisäänmenevät tilaukset kasvattavat varastossa olevien tuotteiden saldoa ja ulosmenevät taas kuluttavat sitää.
 Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilanne ja  varastohistoria, sekä alarm monitorin, mikä näyttää tuotteet, missä nykyinen varastotaso on alle varmuusvaraston.
