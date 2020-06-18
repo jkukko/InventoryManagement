@@ -31,6 +31,7 @@ Jos hän on omistaja, koko varsato poistetaan.
 Valitsemalla "Add inventory" valikointinäkymästä käyttäjä saa listauksen kaikista varatoista, mihin hänellä ei ole oikeutta.
 Painamalla "Select" käyttäjälle lisätään oikeus varastoon.
 Tämän jälkeen varasto löytyy "Own inventories" alta.
+Kun käyttäjä poistaa varaston, minkä omistaja hän ei ole, se palautuu takaisin tähän listaan.
 
 <img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/all_inventories.png" width="960">
 
@@ -49,7 +50,20 @@ Varastonäkymä sisältää seuraavat toiminnallisuudet/näkymät:
 
 ### Summary
 
+Summary näkymistä ilmenee varaston yleistilanne. 
+Ensimmäisenä ilmoitetaan varaston tuotteiden lkm, sekä tuotteiden lukumäärä, mitkä ovat alle varmuuusvarastotason.
 
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/inventory_summary_header_information.png" width="480">
+
+Seuraavaksi on "Allar monitor". 
+Siinä ensimmäiseksi on listattu tuotteet, missä nykyinen vastotilanne on 0.
+Toiseksi siinä on listattu tuotteet, missä nykyinen varastotilanne on alle varmuusvarastotason.
+
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/inventory_summary_alerm_monitor.png" width="960">
+
+Tämän jälkeen systeemi tarjoaa varmuusvarastotason alla olevien tuotteiden varastotilanne graafit allekkain.
+
+<img src="" width="">
 
 ### List of Products
 
