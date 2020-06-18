@@ -16,7 +16,7 @@ FROM account
 WHERE account.username = ? AND account.password = ?
 ```
 
-## Varastoon liittyvät toiminnallisuudet
+## Varastoihin liittyvät toiminnallisuudet
 
 * Käyttäjä voi luoda varaston
 
@@ -68,7 +68,7 @@ FROM inventory
 WHERE inventory.id = ?
 ```
 
-## Varastoon liittyvä toiminnallisuus
+## Yksittäiseen varastoon  liittyvä toiminnallisuudet
 
 * Käyttäjä saa summaryn varastosta (tapahtuu kun valitaan varasto)
 
