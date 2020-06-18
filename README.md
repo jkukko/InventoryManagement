@@ -22,7 +22,7 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 
 ## Dokumentit
 
-[Tietokantakuvio](https://github.com/jkukko/InventoryManagement/blob/master/documents/pictures/tietokantakaavio_V3.png)
+[Tietokantakuvio](https://github.com/jkukko/InventoryManagement/blob/master/documents/tietokantakaavio.md)
 
 [User stories](https://github.com/jkukko/InventoryManagement/blob/master/documents/userstories.md)
 
