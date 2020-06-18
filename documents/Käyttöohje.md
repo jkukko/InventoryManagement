@@ -63,7 +63,7 @@ Toiseksi siinä on listattu tuotteet, missä nykyinen varastotilanne on alle var
 
 Tämän jälkeen systeemi tarjoaa varmuusvarastotason alla olevien tuotteiden varastotilanne graafit allekkain.
 
-<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/inventory_summary_chart.png" width="960">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/inventory_summary_chart.png" width="480">
 
 
 ### Add new Product
