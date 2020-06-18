@@ -21,6 +21,7 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 * Varmuusvarastotason määrittäminen varastolle
 * Varaston nykytilanteen raportointi
 * Varaston historian tarkasteleminen
+* Varaston summaryn tarkistaminen
 
 ## Dokumentit
 
