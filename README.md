@@ -50,3 +50,15 @@ Järjestelmässä tarjoaa erilaisia yhteenvetoraportteja: nykyinen varastotilann
 `
 Käyttäjätunnus: test1, salasana: test1
 `
+## Jatkokehitysideat
+
+* Käyttäjä ei voisi suoraan lisätä muun varastoa omille listoille. Lähettäisi pyynnön, minkä omistaja varmistaisi.
+
+* Kattavampi analytiikka varastotilanteesta.
+
+* Tilauksien paremi käsittely. Jostain syystä en saanut tilauksen validointia toimimaan.Tämän lisäksi olisi pitänyt tehdä parempi käsittely tilauksille jos varasto ei riitä.
+
+* Ennustamisominaisuus tuotteen tilaushistorian perusteella
+
+* Admin-porttaali, mistä näkisi yleistilanteen sovelluksesta (Esim. montako käyttäjää, kuinka paljon kukin käyttäjä käyttää tietokantaa jne.)
+
