@@ -64,8 +64,8 @@ heroku addons:add heroku-postgresql:hobby-dev
 
 * Lähetetään Projekti Herokkun
 
-`
+```
 git add .
 git commit -m "viesti"
 git push heroku master
-`
+```
