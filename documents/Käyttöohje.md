@@ -94,7 +94,12 @@ Tämän lisäksi käyttäjän pitää lisätä haluttu määrä.
 Tilaus voi olla joko sisään- tai ulostuleva. 
 Sisääntuleva tilaus kasvattaa tuotteen varastosaldoa ja ulostuleva kuluttaa varastosaldoa.
 
-<img src="" width="">
+<img src="https://github.com/jkukko/InventoryManagement/blob/master/documents/kuvat/order_create.png" width="960">
+
 ### List Orders
 
+"List Orders" -näkymästä käyttäjä näkee kaikki tilaukset.
+
 ### Return to main menu
+
+"Return to main menu" -valikko palauttaa käyttäjän sovelluksen alkuun.
